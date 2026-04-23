@@ -65,7 +65,7 @@ function Dashboard() {
       <Grid container spacing={3}>
         {/* AI */}
         <Grid item xs={12} md={6}>
-          <Card sx={{ border: "2px solid black", height: 150, width: "500px", backgroundColor: ai?.risk === "High" ? "#ffcccc" : "#ccffcc" }}>
+          <Card sx={{ border: "2px solid black", height: 300, width: "500px", backgroundColor: ai?.risk === "High" ? "#ffcccc" : "#ccffcc" }}>
             <CardContent>
               <Typography variant="h5" sx={{ mt: 2, textAlign: "center" }}>
                 AI Security
@@ -79,7 +79,7 @@ function Dashboard() {
 
         {/* Chart */}
         <Grid item xs={12}>
-         <Card sx={{ border: "2px solid black", height: 150, width: "500px", backgroundColor: ai?.risk === "High" ? "#ffcccc" : "#ccffcc" }}>
+         <Card sx={{ border: "2px solid black", height: 300, width: "500px", backgroundColor: ai?.risk === "High" ? "#ffcccc" : "#ccffcc" }}>
             <CardContent>
               <Typography align="center">
                 Login Activity
