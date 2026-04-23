@@ -7,7 +7,7 @@ import {
   Card,
   CardContent,
   Typography,
-  Button,
+  // Button,
 } from "@mui/material";
 
 import { Bar } from "react-chartjs-2";
@@ -20,6 +20,7 @@ import {
 
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
+import Navbar from "../components/Navbar";
 
 ChartJS.register(BarElement, CategoryScale, LinearScale);
 
@@ -38,7 +39,7 @@ function Dashboard() {
       if (data && data !== "undefined") {
         setAi(JSON.parse(data));
       }
-    } catch {}
+    } catch { }
   };
 
   const fetchHistory = async () => {
@@ -46,10 +47,6 @@ function Dashboard() {
     setHistory(res.data);
   };
 
-  const logout = () => {
-    localStorage.clear();
-    window.location.href = "/";
-  };
 
   const chartData = {
     labels: history.map((h) =>
@@ -60,17 +57,20 @@ function Dashboard() {
 
   return (
     <Container>
-      <Typography variant="h4" sx={{ mt: 3 }}>
+      <Navbar />
+      <Typography variant="h4" sx={{ mt: 3, topMargin: "80px" }}>
         Dashboard
       </Typography>
 
       <Grid container spacing={3}>
         {/* AI */}
         <Grid item xs={12} md={6}>
-          <Card>
+          <Card sx={{ border: "2px solid black", height: 150, width: "500px", backgroundColor: ai?.risk === "High" ? "#ffcccc" : "#ccffcc" }}>
             <CardContent>
-              <Typography>AI Security</Typography>
-              <Typography>
+              <Typography variant="h5" sx={{ mt: 2, textAlign: "center" }}>
+                AI Security
+              </Typography>
+              <Typography textAlign="center" sx={{ mt: 2 }}>
                 Risk: {ai?.risk || "Unknown"}
               </Typography>
             </CardContent>
@@ -79,8 +79,11 @@ function Dashboard() {
 
         {/* Chart */}
         <Grid item xs={12}>
-          <Card>
+         <Card sx={{ border: "2px solid black", height: 150, width: "500px", backgroundColor: ai?.risk === "High" ? "#ffcccc" : "#ccffcc" }}>
             <CardContent>
+              <Typography align="center">
+                Login Activity
+              </Typography>
               <Bar data={chartData} />
             </CardContent>
           </Card>
@@ -88,14 +91,14 @@ function Dashboard() {
 
         {/* Map */}
         <Grid item xs={12}>
-          <Card>
+         <Card sx={{ border: "2px solid black", backgroundColor: ai?.risk === "High" ? "#ffcccc" : "#ccffcc" }}>
             <CardContent>
               <Typography>Login Locations</Typography>
 
               <MapContainer
                 center={[20.5937, 78.9629]}
                 zoom={4}
-                style={{ height: "400px" }}
+                style={{ height: "400px", width: "1000px" }}
               >
                 <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
 
@@ -120,9 +123,6 @@ function Dashboard() {
         </Grid>
       </Grid>
 
-      <Button onClick={logout} color="error" variant="contained">
-        Logout
-      </Button>
     </Container>
   );
 }

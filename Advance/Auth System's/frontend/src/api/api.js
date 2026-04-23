@@ -39,4 +39,8 @@ API.interceptors.response.use(
   }
 );
 
+export const analyzeText = (text) => {
+  return API.post("/ai/analyze", { text });
+};
+
 export default API;
