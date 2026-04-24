@@ -1,0 +1,10 @@
+Age,Salary,Gender,City,Purchased
+22,25000,male,delhi,0
+25,30000,female,mumbai,1
+30,50000,male,delhi,0
+35,65000,female,kolkata,1
+28,48000,male,chennai,0
+40,80000,female,mumbai,1
+23,27000,female,chennai,0
+31,52000,male,kolkata,1
+29,47000,female,delhi,0

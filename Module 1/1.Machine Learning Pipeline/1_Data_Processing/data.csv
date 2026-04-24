@@ -4,6 +4,7 @@ Age,Salary,Gender,City,Purchased
 30,50000,Male,Delhi,0
 35,65000,Female,Kolkata,1
 28,48000,Male,Chennai,0
+25,30000,Female,Mumbai,1
 40,80000,Female,Mumbai,1
 50,90000,Male,Delhi,1
 23,27000,Female,Chennai,0
