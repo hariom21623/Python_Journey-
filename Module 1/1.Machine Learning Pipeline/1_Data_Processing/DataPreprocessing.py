@@ -13,7 +13,7 @@ from sklearn.preprocessing import LabelEncoder, StandardScaler
 # 1. Load Dataset
 # -------------------------------
 
-df = pd.read_csv("data.csv")
+df = pd.read_csv("C:/Users/Hariom/Desktop/Python/Module 1/1.Machine Learning Pipeline/1_Data_Processing/data.csv")
 
 print("🔹 Original Data:")
 print(df.head())
